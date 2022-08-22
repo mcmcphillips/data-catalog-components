@@ -12,7 +12,21 @@ module.exports = async ({ config }) => {
     use: ['style-loader', 'css-loader', 'sass-loader'],
     include: path.resolve(__dirname, '../'),
   });
-
+  config.module.externals = {
+    // Use external version of React
+    "react": {
+        "commonjs": "react",
+        "commonjs2": "react",
+        "amd": "react",
+        "root": "React"
+    },
+    "react-dom": {
+        "commonjs": "react-dom",
+        "commonjs2": "react-dom",
+        "amd": "react-dom",
+        "root": "ReactDOM"
+    }
+  }
   // Transpile Gatsby module because Gatsby includes un-transpiled ES6 code.
   config.module.rules[0].exclude = [/node_modules\/(?!(gatsby)\/)/]
   // use installed babel-loader which is v8.0-beta (which is meant to work with @babel/core@7)
