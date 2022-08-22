@@ -2,7 +2,7 @@ import { configure } from '@storybook/react';
 import { addDecorator } from '@storybook/react';
 import { addParameters } from '@storybook/react';
 import React from 'react';
-import { BrowserRouter as Router, Route } from "react-router-dom";
+import { BrowserRouter as Router } from "react-router-dom";
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { fab } from '@fortawesome/free-brands-svg-icons';
 import { fas } from '@fortawesome/free-solid-svg-icons';
